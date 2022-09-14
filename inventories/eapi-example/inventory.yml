@@ -1,0 +1,38 @@
+---
+AVD:
+  children:
+    AVD_FABRIC:
+      children:
+        AVD_SPINES:
+          hosts:
+            AVD-SPINE1:
+              ansible_host: 10.73.254.1
+[... output truncated ...]
+        AVD_L3LEAFS:
+          children:
+            AVD_LEAF1:
+              hosts:
+                AVD-LEAF1A:
+                  ansible_host: 10.73.254.11
+                AVD-LEAF1B:
+                  ansible_host: 10.73.254.12
+            AVD_LEAF3:
+              hosts:
+                AVD-LEAF3A:
+                  ansible_host: 10.73.254.17
+[... output truncated ...]
+        AVD_L2LEAFS:
+          children:
+            AVD_L2LEAF1:
+              hosts:
+                AVD-AGG01:
+                  ansible_host: 10.73.254.21
+[... output truncated ...]
+    AVD_TENANTS_NETWORKS:
+      children:
+        AVD_L3LEAFS:
+        AVD_L2LEAFS:
+    AVD_SERVERS:
+      children:
+        AVD_L3LEAFS:
+        AVD_L2LEAFS:
